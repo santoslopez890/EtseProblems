@@ -14,8 +14,7 @@ public class Anagrams_fun {
     //For example, given the strings s = ['code', 'doce', 'ecod', 'framer', 'frame'],  the strings 'doce' and 'ecod' are both
     //anagrams of 'code' so they are removed from the list. The words 'frame' and 'framer' are not anagrams due to the extra
     //'r' in 'framer', so they remain. The final list of strings in alphabetical order is ['code', 'frame', 'framer'].
-    //'''
-    //
+
     //words = ['code', 'doce', 'ecod', 'framer', 'frame']
 
 
@@ -29,7 +28,7 @@ public class Anagrams_fun {
             char[] chars = i.toCharArray();
             Arrays.sort(chars);
             String sortedWord = new String(chars);
-            //it gets made into sorted word^
+            //it gets made into sorted words
             //if map does not contain sorted word make a new list of words if it does add it to the anagrams list
             if (!hashSet.contains(sortedWord)) {
                 hashSet.add(sortedWord);
