@@ -18,11 +18,7 @@ public class Anagrams_fun {
     //
     //words = ['code', 'doce', 'ecod', 'framer', 'frame']
 
-    public static void main(String[] args) {
-        ArrayList<String> words=new ArrayList<>(Arrays.asList("code", "doce", "ecod", "framer", "frame"));
 
-        System.out.println(anagrams_Fun(words));
-    }
     public static List<String> anagrams_Fun(List<String> input){
         // we make a hashset to store values
         HashSet<String> hashSet=new HashSet<>();
