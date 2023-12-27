@@ -1,4 +1,4 @@
-package org.example;
+package org.ETSEQuestions;
 
 import java.util.*;
 
@@ -46,44 +46,34 @@ public class SellingProducts {
          *  2. INTEGER m
          */
         public static int deleteProducts(List<Integer> ids, int m) {
-            // Write your code here
-            Map<Integer, Integer> map = new HashMap<>();
+            Map<Integer, Integer> result = new HashMap<>();
+            //sort the ids into hashmap based on how many times they appear
             for (Integer id : ids) {
-                if (map.containsKey(id)) {
-                    map.put(id, map.get(id) + 1);
+                if (result.containsKey(id)) {
+                    result.put(id, result.get(id) + 1);
                 } else {
-                    map.put(id, 1);
+                    result.put(id, 1);
                 }
             }
-
-            // values
-            List<Map.Entry<Integer, Integer>> list = new LinkedList<>(map.entrySet());
-
+            // make a list to store the values
+            List<Map.Entry<Integer, Integer>> list = new LinkedList<>(result.entrySet());
             // sorting using Comparator
             list.sort(Comparator.comparingInt(Map.Entry::getValue));
-
             // Creating new map after sorting and also
             // maintaining insertion order
-            Map<Integer, Integer> lh = new LinkedHashMap<>();
+            Map<Integer, Integer> sortedMap = new LinkedHashMap<>();
             for (Map.Entry<Integer, Integer> e : list) {
-                lh.put(e.getKey(), e.getValue());
+                sortedMap.put(e.getKey(), e.getValue());
             }
-
-            for (Integer i : lh.keySet()) {
-                // removing element from whose frequency count is
-                // less than m ,Sorted manner to get minimum
-                // distinct ids
-                if (map.get(i) <= m) {
-                    m -= map.get(i);
-                    map.remove(i);
+            for (Integer i : sortedMap.keySet()) {
+                // taking out elements whose count is
+                // less than m in a sorted manner
+                if (result.get(i) <= m) {
+                    m -= result.get(i);
+                    result.remove(i);
                 }
             }
-            return map.size();
+            //returning result
+            return result.size();
         }
-    public static void main(String[] args) {
-       List<Integer> input= new ArrayList<>(Arrays.asList(1, 2, 3, 1, 2, 2, 1));
-        List<Integer> input2= new ArrayList<>(Arrays.asList(1, 1, 5, 5));
-        System.out.println(deleteProducts(input,3));
-        System.out.println(deleteProducts(input2,2));
-    }
 }

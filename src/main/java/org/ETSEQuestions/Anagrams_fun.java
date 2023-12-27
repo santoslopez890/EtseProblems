@@ -1,4 +1,4 @@
-package org.example;
+package org.ETSEQuestions;
 
 import java.util.ArrayList;
 import java.util.Arrays;

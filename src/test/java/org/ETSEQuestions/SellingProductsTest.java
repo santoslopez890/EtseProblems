@@ -1,12 +1,10 @@
-package org.example;
+package org.ETSEQuestions;
 
 import org.junit.Assert;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SellingProductsTest {
 
