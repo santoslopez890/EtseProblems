@@ -46,6 +46,7 @@ public class SellingProducts {
          *  2. INTEGER m
          */
         public static int deleteProducts(List<Integer> ids, int m) {
+            //made a map to store the end result
             Map<Integer, Integer> result = new HashMap<>();
             //sort the ids into hashmap based on how many times they appear
             for (Integer id : ids) {
